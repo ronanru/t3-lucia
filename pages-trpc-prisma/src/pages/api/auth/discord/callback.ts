@@ -12,7 +12,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(302).setHeader("Location", "/").end();
   }
   const cookies = parseCookie(req.headers.cookie ?? "");
-  const storedState = cookies.github_oauth_state;
+  const storedState = cookies.discord_oauth_state;
   const state = req.query.state;
   const code = req.query.code;
   // validate state

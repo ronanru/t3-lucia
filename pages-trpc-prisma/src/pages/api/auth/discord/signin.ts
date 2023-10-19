@@ -13,7 +13,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(302).setHeader("Location", "/").end();
   }
   const [url, state] = await discordAuth.getAuthorizationUrl();
-  const stateCookie = serializeCookie("github_oauth_state", state, {
+  const stateCookie = serializeCookie("discord_oauth_state", state, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     path: "/",
